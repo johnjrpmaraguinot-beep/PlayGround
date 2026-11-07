@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f4f3ef">
+  <title>Little Big Lives — Life, your way</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Little Big Lives home"><span class="brand-mark">✳</span><span>little big <b>lives</b></span></a>
+      <div class="top-center"><span class="season-dot"></span><span id="season-label">SPRING · YEAR 1</span></div>
+      <div class="top-actions"><button class="icon-btn" id="sound-toggle" aria-label="Toggle sound">♫</button><button class="avatar-mini" id="family-avatar">M</button></div>
+    </header>
+
+    <section class="game-layout">
+      <aside class="left-rail">
+        <div class="profile-card">
+          <div class="profile-head"><div class="family-icon" id="family-icon">✦</div><div><div class="eyebrow">YOUR HOUSEHOLD</div><h2 id="family-name">The Moreaus</h2></div></div>
+          <p class="family-tagline" id="family-tagline">A little ambition goes a long way.</p>
+          <div class="profile-divider"></div>
+          <div class="metric-row"><span>Household funds</span><strong id="money-value">$24,800</strong></div>
+          <div class="wealth-track"><span id="wealth-progress"></span></div>
+          <div class="metric-row small"><span id="income-label">Monthly income</span><strong id="income-value">$4,200</strong></div>
+          <div class="metric-row small"><span>Home value</span><strong id="home-value">$385,000</strong></div>
+          <div class="metric-row small"><span>Neighborhood</span><strong id="neighborhood-value">Maplewood</strong></div>
+        </div>
+        <div class="side-nav" role="navigation" aria-label="Game sections">
+          <button class="nav-item active" data-panel="home"><span>⌂</span> Home <i>01</i></button>
+          <button class="nav-item" data-panel="family"><span>♡</span> Family <i>02</i></button>
+          <button class="nav-item" data-panel="career"><span>↗</span> Career &amp; business <i>03</i></button>
+          <button class="nav-item" data-panel="assets"><span>◇</span> Assets &amp; cover <i>04</i></button>
+          <button class="nav-item" data-panel="travel"><span>✈</span> Travel the world <i>05</i></button>
+        </div>
+        <div class="sidebar-note"><span class="note-icon">☀</span><div><strong>Make it your story</strong><p>There's no wrong way to live a life.</p></div></div>
+      </aside>
+
+      <section class="main-stage">
+        <div class="welcome-row"><div><div class="eyebrow" id="date-label">MONDAY, APRIL 14</div><h1 id="greeting">A fresh start, <em>together.</em></h1><p id="sub-greeting">Your home is waiting. What will today bring?</p></div><button class="day-button" id="next-day">Next day <span>→</span></button></div>
+        <div class="scene-wrap">
+          <div class="scene-topline"><div class="scene-location"><span class="location-pin">⌖</span><span id="scene-location">MAPLEWOOD · HOME</span><span class="live-pill"><span></span> LIVE</span></div><button class="scene-menu" id="view-toggle" aria-label="Toggle scene view">⛶</button></div>
+          <canvas id="world" aria-label="Interactive isometric 3D home scene"></canvas>
+          <div class="scene-hint" id="scene-hint"><span>✦</span> Tap a person or place to explore</div>
+          <div class="scene-controls"><button id="zoom-out" aria-label="Zoom out">−</button><button id="zoom-in" aria-label="Zoom in">+</button></div>
+          <div class="scene-caption"><span class="caption-avatar" id="caption-avatar">M</span><span><b id="scene-family-title">Moreau Family Home</b><small id="scene-family-sub">A cozy place to grow</small></span><button id="open-home">Explore home <span>↗</span></button></div>
+        </div>
+        <div class="dashboard-grid">
+          <article class="card today-card"><div class="card-heading"><div><div class="eyebrow">TODAY AT A GLANCE</div><h3>Your little world</h3></div><button class="more-btn" aria-label="More options">···</button></div><div class="glance-list"><div class="glance-item"><span class="glance-icon mint">☕</span><div><b id="today-event">Slow morning at home</b><small id="today-detail">A good day to make a plan</small></div><span class="glance-time">9:00 AM</span></div><div class="glance-item"><span class="glance-icon peach">↗</span><div><b id="work-event">Work &amp; opportunity</b><small id="work-detail">Your next chapter is yours to write</small></div><span class="glance-time">10:30 AM</span></div></div></article>
+          <article class="card mood-card"><div class="card-heading"><div><div class="eyebrow">HOUSEHOLD MOOD</div><h3>Doing pretty well</h3></div><span class="mood-sun">☼</span></div><div class="mood-meter"><div class="mood-fill"></div></div><div class="mood-bottom"><span>Everyone's feeling good</span><b>☺ 82%</b></div></article>
+        </div>
+      </section>
+
+      <aside class="right-rail">
+        <div class="rail-heading"><div><div class="eyebrow">YOUR PEOPLE</div><h2>At home <span id="people-count">· 3</span></h2></div><button class="round-add" id="add-person" aria-label="Add family member">+</button></div>
+        <div class="people-list" id="people-list"></div>
+        <div class="right-divider"></div>
+        <div class="rail-heading goals-head"><div><div class="eyebrow">LITTLE BY LITTLE</div><h2>Life goals</h2></div><button class="tiny-arrow" id="goals-expand">↗</button></div>
+        <div class="goal-card"><div class="goal-icon">⌂</div><div class="goal-info"><b id="goal-title">Make this house a home</b><small id="goal-subtitle">Your first chapter</small><div class="goal-progress"><i id="goal-progress"></i></div></div><span id="goal-percent">35%</span></div>
+        <button class="goal-switch" id="new-goal">＋ Set a new goal</button>
+        <div class="daily-tip"><span>✳</span><div><b>A little note</b><p id="daily-tip">Invest in moments together. They're the things that last.</p></div></div>
+        <div class="footer-mark">LITTLE BIG LIVES <span>✳</span> MAKE A LIFE</div>
+      </aside>
+    </section>
+  </main>
+
+  <div class="modal-backdrop" id="modal-backdrop" aria-hidden="true"><section class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><button class="modal-close" id="modal-close" aria-label="Close">×</button><div id="modal-content"></div></section></div>
+  <div class="toast" id="toast" role="status"></div>
+  <style>
+    .modal-title{font:700 25px var(--display);letter-spacing:-.7px;margin:7px 28px 8px 0}.modal-copy{color:#7d8780;line-height:1.55;margin:0 0 18px}.choice-list,.modal-list{display:grid;gap:8px}.family-choice,.destination-choice,.class-choice{width:100%;border:1px solid #e9ece7;background:#fff;border-radius:10px;padding:11px;display:flex;align-items:center;text-align:left;gap:11px;color:var(--ink);cursor:pointer}.family-choice.chosen,.destination-choice.chosen,.class-choice.chosen{border-color:#82a58d;background:#f3f8f2}.choice-icon{display:grid;place-items:center;background:#eaf1e9;color:#52785f;width:34px;height:34px;border-radius:10px;font-size:18px}.family-choice>span:nth-child(2),.destination-choice>span:nth-child(2){flex:1}.family-choice b,.destination-choice b,.modal-person b,.upgrade-card b{display:block;font:700 12px var(--display)}.family-choice small,.destination-choice small,.class-choice small,.modal-person small,.upgrade-card small{display:block;font-size:10px;color:#8b948e;margin-top:3px}.choice-check{color:#688873;font-weight:700}.destination-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px;max-height:210px;overflow:auto;padding-right:2px}.destination-choice{padding:9px;gap:8px}.destination-choice .flag{font-size:20px}.destination-choice b{font-size:11px}.destination-choice small{font-size:9px}.class-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:12px}.class-choice{display:block;padding:9px 7px}.class-choice b{font-size:10px;display:block}.class-choice small{font-size:8px;line-height:1.35}.trip-length{display:flex;justify-content:space-between;align-items:center;margin-top:12px;color:#657169;font-size:11px}.trip-length select{border:1px solid #e6e9e3;background:#fff;border-radius:7px;padding:7px;color:var(--ink)}.price-line,.asset-summary{display:flex;justify-content:space-between;align-items:center;margin-top:13px;padding:11px;background:#f4f7f2;border-radius:9px;font-size:11px;color:#738078}.price-line b,.asset-summary b{color:#345d49}.modal-footer{display:flex;gap:8px;margin-top:16px}.action-btn{border:0;border-radius:8px;padding:10px 13px;font:700 11px var(--sans);cursor:pointer}.action-btn.primary{background:#527d66;color:white}.action-btn.secondary{background:#eef3ed;color:#476851}.upgrade-card{display:flex;align-items:center;gap:9px;border:1px solid #edf0eb;border-radius:10px;padding:11px;margin:8px 0}.upgrade-card>div{flex:1}.upgrade-card>strong{font-size:10px;color:#567862}.upgrade-icon{width:30px;height:30px;display:grid;place-items:center;border-radius:9px;background:#edf3ed;color:#587a62;font-size:16px}.mini-buy{border:0;border-radius:7px;padding:7px 9px;background:#eaf1ea;color:#496b53;font-size:10px;cursor:pointer}.modal-person{display:flex;align-items:center;gap:10px;padding:8px 2px}.modal-person>span{font-size:25px}.soft-note{padding:12px;border-radius:9px;background:#f5f6f1;color:#78817a;font-size:11px;line-height:1.5;margin-top:12px}.soft-note b{color:#4d725a}
+    @media(max-width:520px){.modal{width:min(94vw,480px);padding:21px 16px}.modal-title{font-size:22px}.destination-grid{max-height:190px}.destination-choice{padding:7px 6px}.class-choice{padding:8px 5px}.modal-footer{flex-wrap:wrap}.modal-footer .action-btn{flex:1}}
+  </style>
+  <script src="game.js"></script>
+</body>
+</html>
