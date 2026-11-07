@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#101a19" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='12' fill='%23c7f2d8'/%3E%3Ctext x='12' y='29' font-family='sans-serif' font-size='29' font-weight='700' fill='%23182824'%3Ee%3C/text%3E%3C/svg%3E" />
+  <title>Everlife — Your life, your way</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="rail">
+      <a class="brand-mark" href="#" aria-label="Everlife home"><span class="brand-glyph">e</span></a>
+      <nav class="rail-nav" aria-label="Main navigation">
+        <button class="rail-btn active" data-view="home" aria-label="Home" title="Home"><span>⌂</span></button>
+        <button class="rail-btn" data-view="family" aria-label="Families" title="Families"><span>♧</span></button>
+        <button class="rail-btn" data-view="travel" aria-label="Travel" title="Travel"><span>✈</span></button>
+        <button class="rail-btn" data-view="world" aria-label="World" title="World"><span>◎</span></button>
+      </nav>
+      <div class="rail-bottom"><button class="rail-btn" id="sound-toggle" aria-label="Toggle sound" title="Sound"><span>♫</span></button><button class="avatar-mini" aria-label="Your profile">J</button></div>
+    </aside>
+    <main class="main-area">
+      <header class="topbar">
+        <div class="top-title"><div class="eyebrow">SATURDAY, JUNE 14 <span class="sun-dot"></span> SUNNY, 24°</div><h1>Make today <em>yours.</em></h1></div>
+        <div class="top-actions"><button class="icon-action" id="notifications" aria-label="Notifications">♧<i></i></button><div class="currency"><span class="coin">$</span><div><small>HOUSEHOLD FUNDS</small><strong id="top-money">$0</strong></div><span class="chevron">⌄</span></div></div>
+      </header>
+      <div class="content-grid">
+        <section class="game-column">
+          <div class="family-switcher" id="family-switcher"></div>
+          <section class="scene-card">
+            <div class="scene-overlay"><div class="location-pill"><span class="live-dot"></span><span id="scene-location">HOME · BEVERLY HILLS</span></div><button class="scene-more" id="scene-more" aria-label="Scene options">···</button></div>
+            <div class="scene-art" id="scene-art" aria-label="Three-dimensional view of your home"></div>
+            <div class="scene-bottom"><div><div class="scene-caption" id="scene-caption">THE SUNRISE ESTATE</div><div class="scene-subcaption" id="scene-subcaption">A quiet morning at home</div></div><button class="circle-play" id="explore-btn" aria-label="Explore home">↗</button></div>
+          </section>
+          <div class="quick-actions">
+            <button class="quick-action" data-action="work"><span class="action-icon work-icon">↗</span><span><b>Go to work</b><small id="work-label">Creative director</small></span><span class="action-arrow">→</span></button>
+            <button class="quick-action" data-action="business"><span class="action-icon business-icon">⌂</span><span><b>Manage business</b><small id="business-label">The family office</small></span><span class="action-arrow">→</span></button>
+            <button class="quick-action" data-action="care"><span class="action-icon care-icon">♡</span><span><b>Self care</b><small id="care-label">Feel like yourself</small></span><span class="action-arrow">→</span></button>
+          </div>
+          <section class="travel-banner" id="travel-banner"><div class="travel-text"><span class="eyebrow">A CHANGE OF SCENERY</span><h2>The world is<br><em>closer than you think.</em></h2><p>Ten extraordinary cities. One unforgettable trip.</p><button class="primary-btn" data-view="travel">Plan a getaway <span>↗</span></button></div><div class="travel-visual"><div class="sun-disc"></div><div class="travel-city city-back"></div><div class="travel-city city-front"></div><div class="travel-plane">✈</div><div class="travel-code">EL&nbsp; 001</div></div></section>
+        </section>
+        <aside class="info-column">
+          <section class="household-card panel"><div class="panel-heading"><div><span class="eyebrow">YOUR HOUSEHOLD</span><h2 id="household-name">The Whitmores</h2></div><button class="dots-btn" aria-label="Household options">···</button></div><div class="household-members" id="household-members"></div><div class="wealth-line"><span id="wealth-label">Family wealth</span><strong id="net-worth">$0</strong></div><div class="wealth-meter"><span id="wealth-meter-fill"></span></div><div class="wealth-caption"><span>THIS MONTH</span><strong id="monthly-change">↗ $0</strong></div></section>
+          <section class="panel needs-panel"><div class="panel-heading compact"><div><span class="eyebrow">HOW EVERYONE'S DOING</span><h2>Needs & mood</h2></div><button class="dots-btn" aria-label="Needs options">···</button></div><div id="needs-list" class="needs-list"></div></section>
+          <section class="panel essentials-panel"><div class="panel-heading compact"><div><span class="eyebrow">THE GOOD LIFE</span><h2>At a glance</h2></div><button class="dots-btn" aria-label="Lifestyle options">···</button></div><div id="essentials-list" class="essentials-list"></div><button class="text-link" data-view="family">View lifestyle details <span>→</span></button></section>
+          <section class="daily-note"><span class="note-icon">✳</span><div><b>A little note</b><p id="daily-tip">Every great life is built one lovely day at a time.</p></div></section>
+        </aside>
+      </div>
+      <footer class="bottom-bar"><span>EVERLIFE <b>·</b> YOUR STORY, STILL UNWRITTEN</span><div><span class="status-pip"></span> ALL PROGRESS SAVED</div><button id="advance-day">END THE DAY <span>→</span></button></footer>
+    </main>
+  </div>
+  <div class="modal-backdrop" id="modal-backdrop" hidden><section class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><button class="modal-close" id="modal-close" aria-label="Close">×</button><div id="modal-content"></div></section></div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="game.js"></script>
+</body>
+</html>
